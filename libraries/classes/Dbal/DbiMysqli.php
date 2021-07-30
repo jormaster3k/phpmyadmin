@@ -156,11 +156,7 @@ class DbiMysqli implements DbiExtension
             return false;
         }
 
-        if (defined('PMA_ENABLE_LDI')) {
-            $mysqli->options(MYSQLI_OPT_LOCAL_INFILE, true);
-        } else {
-            $mysqli->options(MYSQLI_OPT_LOCAL_INFILE, false);
-        }
+        $mysqli->options(MYSQLI_OPT_LOCAL_INFILE, true);
 
         return $mysqli;
     }
